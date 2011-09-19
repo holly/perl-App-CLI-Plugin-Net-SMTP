@@ -8,7 +8,7 @@ App::CLI::Plugin::Net::SMTP - for App::CLI::Extension mail module
 
 =head1 VERSION
 
-1.2
+1.3
 
 =head1 SYNOPSIS
 
@@ -88,11 +88,11 @@ smtp method setting
 =cut
 
 use strict;
-use base qw(Class::Data::Accessor);
+use base qw(Class::Accessor::Grouped);
 use Net::SMTP;
 
-__PACKAGE__->mk_classaccessor("smtp");
-our $VERSION = '1.2';
+__PACKAGE__->mk_group_accessors("smtp");
+our $VERSION = '1.3';
 
 =pod
 
@@ -175,7 +175,7 @@ __END__
 
 =head1 SEE ALSO
 
-L<App::CLI::Extension> L<Class::Data::Accessor> L<Net::SMTP>
+L<App::CLI::Extension> L<Class::Accessor::Grouped> L<Net::SMTP>
 
 =head1 AUTHOR
 
